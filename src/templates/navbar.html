@@ -1,0 +1,57 @@
+{% load staticfiles %}
+
+ <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-4">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="{%  static 'img/images2.jpg' %}"></a>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about'%}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul>
+      
+
+  </div>
+
+        <ul class="navbar-nav mr-auto">
+       
+
+   {%if request.user.is_authenticated%}
+
+          <li class="nav-item ">
+        <a class="btn btn-danger" href="{% url 'auth_logout' %}" role="button">Logout</a>
+          </li>
+        {%endif%}
+  {%if not request.user.is_authenticated and not "/accounts/login" in request.get_full_path%}
+
+
+        <form class= "navbar-form navbar-nav mr-auto" method = "POST" action="{% url 'auth_login' %}">{%csrf_token%}
+         <li>
+          <div class = "form-group">
+            <input type="text" class="form-control" name="username" placeholder= "Username" />
+          </div>
+         </li>
+         <li>
+          <div class = "form-group">
+            <input type="password" class= "form-control" name='password' placeholder="Password" />
+          </div>
+          </li>
+        <li>
+
+          <button type="submit" class= "btn btn-primary"  >Login</button>
+                  </form>
+           {%if not request.user.is_authenticated%}
+        <li>
+        </li>
+             {%endif%}
+    {%endif%}
+        </ul> 
+    </nav>

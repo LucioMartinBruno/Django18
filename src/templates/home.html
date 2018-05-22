@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{%load staticfiles%}
+{% block jumbotron %}
+{% if not request.user.is_authenticated%}
+
+<div class="jumbotron">
+
+<div class="row">
+
+	<div class='col-sm-12 text-align-center'>
+		<h1>Lucio Martin Bruno</h1>
+		<p>Alle wichtige Experimente und Tutorial</p>
+
+		
+		<a class="btn btn-lg btn-primary" href="{%url 'registration_register'%}" role="button">Jetzt Anmelden &raquo;</a>
+		</p>
+		</div>
+{%endif%}
+{% endblock %}
+
+ 
+{% block content %}
+{%if request.user.is_authenticated%}
+
+<h1>You are logged in! </h1>
+
+{%else%}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6  text-align-center">
+
+            <h2>Arduino</h2>
+           <br>
+           <p> 	<img  src="{%  static 'img/arduino2.jpg' %}">		
+           </p>
+            <p><a class="btn btn-secondary" href="{% url 'arduino' %}" role="button">View details &raquo;</a></p>
+         </div>
+       
+          <div class="col-md-6 text-align-center">
+
+           <h2>Raspberry pi 3</h2>
+           <br>
+            <p><img  src="{%  static 'img/raspberry.png' %}">	</p>	 
+            <p><a class="btn btn-secondary" href="{% url 'raspberry' %}" role="button">View details &raquo;</a></p>
+          </div>
+        </div>
+      
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Updates</h6>
+        <div class="media text-muted pt-3">
+          <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@username - Lucio</strong>
+            
+            Diese Webseite wurde mit Django von Lucio Martin Bruno aus Didaktische Grunden entwickelt
+
+          </p>
+        </div>
+{%endif%}
+
+
+
+
+
+{% endblock %}

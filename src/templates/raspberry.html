@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+{%load staticfiles%}
+
+{%block jumbotron%}
+<div class="jumbotron">
+
+
+	<div class="row">
+					
+		<div class ="col-sm-2 ">
+			<p><img  src="{%  static 'img/logorasp.png' %}"></p>	 			
+		</div>
+		<div class ="col-sm-10 ">
+			<br>
+			<h1>Was ist Raspberry pi?</h1>
+			</div>
+		
+
+		<div class ="col-sm-12 ">
+			<p><h5>
+				 Der Raspberry Pi ist ein Einplatinencomputer, der von der britischenRaspberry Pi Foundation entwickelt wurde. Der Rechner enthält ein Ein-Chip-  System von Broadcom mit  einem ARM-Mikroprozessor, die Grundfläche der Platine entspricht etwa den Abmessungen einer Kreditkarte. Der Raspberry Pi kam Anfang 2012 auf den Markt; sein großer  Markterfolg wird teils als Revival des bis dahin weitgehend bedeutungslos  gewordenen Heimcomputers zum Programmieren und Experimentieren angesehen.
+			</h5></p>
+			<p><h5>
+			 Als Betriebssystem kommen vor allem angepasste Linux-Distributionen mit grafischer Benutzeroberfläche zum Einsatz, das neueste Modell unterstützt auch Windows 10 in einer speziellen Internet-of-Things-Version. Eine native Festplatten-Schnittstelle ist nicht vorhanden, stattdessen werden SD-Speicherkarten als Bootmedium verwendet. Als Massenspeicher können zudem USB-Sticks und Festplatten über die  eingebaute USB-Schnittstelle angeschlossen werden.
+			</h5></p>
+			<p><h5>
+			Das Betriebssystem kann direkt bei Raspberry unter dem <a href= "http://www.raspberrypi.org/downloads">Link</a> geholt werden.</h5></p>
+
+			<p><h5>Der Name wird wie raspberry pie ausgesprochen, das englische Wort für Himbeerkuchen. Das „Pi“ steht für „Python interpreter“, ursprünglich sollte der Rechner mit fest eingebautem Interpreter für die Programmiersprache Python geliefert werden, ähnlich wie bei den Heimcomputern der 1980er-Jahre fast durchweg ein BASIC-Interpreter eingebaut war Die „Himbeere“ knüpft an die Tradition an, Computer nach Früchten zu benennen, wie etwa Apple oder Acorn. </h5></p>
+
+			<p><h5>Daten zum aktuellen Modell Raspberry Pi 3</h5></p>
+			
+			
+			<ul>
+				  <li>  SoC: Broadcom BCM2837</li>
+				  <li>  CPU: ARM Cortex-A53 (64-bit Quad Core, 1,2 GHz)</li>
+				  <li>GPU: 400 MHz VideoCore IV</li>
+				  <li> Arbeitsspeicher: 1 GB RAM LPDDR2-900 SDRAM</li>
+				  <li> LAN 10/100 Mbps, 802.11n Wireless LAN und Bluetooth 4.1 (BCM43143, Low Energy)</li>
+				  <li> Schnittstellen: 4 x USB 2.0, 1 x HDMI, 1 x CSI Camera Port, DSI Display Port, Stereo Out, microSD </li>
+				  <li>Port Maße 85,6 x 56,5 Millimeter</li>
+			</ul>
+		
+		</div>
+	</div>
+</div>
+{%endblock%}
